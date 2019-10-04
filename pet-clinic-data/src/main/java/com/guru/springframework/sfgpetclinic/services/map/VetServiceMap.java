@@ -5,30 +5,34 @@ import com.guru.springframework.sfgpetclinic.services.VetService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
+
 @Service
-public class VetServiceMap implements VetService {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
     @Override
     public Set<Vet> findAll() {
-        return null;
+        return super.findAll();
     }
 
     @Override
     public Vet findViewByID(Long aLong) {
-        return null;
+        return this.findViewById(aLong);
     }
 
     @Override
-    public Vet save(Vet object) {
-        return null;
+    public Vet save(Vet vet) {
+        return super.save(vet.getId(), vet);
     }
 
     @Override
-    public void delete(Vet object) {
+    public void delete(Vet vet) {
+        {
+            super.delete(vet);
+        }
 
     }
 
     @Override
-    public void deleteByID(Long aLong) {
-
+    public void deleteByID(Long id) {
+        super.deleteById(id);
     }
 }
