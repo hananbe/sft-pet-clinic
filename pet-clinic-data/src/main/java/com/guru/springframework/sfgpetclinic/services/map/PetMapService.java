@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Set;
 @Service
-public class PetServiceMap implements PetService {
+public class PetMapService implements PetService {
     @Override
     public Set<Pet> findAll() {
         return null;
