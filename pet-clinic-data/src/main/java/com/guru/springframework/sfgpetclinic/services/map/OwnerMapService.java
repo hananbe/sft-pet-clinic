@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -81,6 +82,12 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
             if (owner!=null &&owner.getLastName().equals(lastName))
                 return owner;
 
+        return null;
+    }
+
+    public List<Owner> findAllByLastNameLike(String lastName) {
+
+        //todo - impl
         return null;
     }
 }
